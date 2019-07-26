@@ -87,7 +87,7 @@ sendEmail = () =>{
         <br />
         {this.props.details}
         <br/>
-       <h3>  You made this:{this.renderTimeStamp()}
+       <h3>  You made this:{this.renderTimeStamp()} Age: {this.props.age} day
         </h3>
         <button onClick={this.sendText}> Send Text Notification </button>
         <br/>

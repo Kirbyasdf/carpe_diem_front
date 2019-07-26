@@ -16,6 +16,7 @@ export default class EditGoalForm extends React.Component {
   };
 
   handleSubmit = e => {
+    console.log(this.state)
     e.preventDefault();
     fetch(`http://localhost:4000/api/v1/goals/${this.props.goal.id}`, {
       method: "PATCH",
@@ -55,7 +56,7 @@ export default class EditGoalForm extends React.Component {
         <br />
         <label>Notification Type </label>
         <div
-          onChange={e => this.setState({ notification_type: e.target.value })}
+          onChange={e => this.setState({ notification_type: +e.target.value })}
         >
           <select required>
             <option value="" />
@@ -65,7 +66,7 @@ export default class EditGoalForm extends React.Component {
         </div>
         <br />
         <label>Notification frequency </label>
-        <div onChange={e => this.setState({ notification: e.target.value })}>
+        <div onChange={e => this.setState({ notification_freq: +e.target.value })}>
           <select required>
             <option value="" />
             <option value="1">Every Month</option>
