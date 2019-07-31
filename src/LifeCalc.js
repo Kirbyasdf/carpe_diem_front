@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, BrowserRouter as Router, Route } from "react-router-dom";
 
 export default class LifeCalc extends React.Component {
   state = {
@@ -41,6 +40,8 @@ export default class LifeCalc extends React.Component {
   };
 
   getLifeExp = () => {
+    const inch = this.state.inch
+    const feet = this.state.feet
     const gender = this.state.gender;
     const diabetes = this.state.diabetes;
     const alochol = this.state.alochol;
@@ -61,6 +62,8 @@ export default class LifeCalc extends React.Component {
         Accepts: "application/json"
       },
       body: JSON.stringify({
+        feet,
+        inch,
         gender,
         diabetes,
         alochol,
@@ -83,9 +86,8 @@ export default class LifeCalc extends React.Component {
         const redirect = () =>
           setTimeout(() => {
             this.props.activateUser();
-            this.props.history.push("/");
             clearTimeout(redirect);
-          }, 10000);
+          }, 5000);
         redirect();
       });
   };

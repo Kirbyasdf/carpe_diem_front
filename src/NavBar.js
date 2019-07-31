@@ -1,12 +1,12 @@
 import React from "react";
-import Settings from "./Settings";
-import { Link, BrowserRouter as Router, Route } from "react-router-dom";
 
 export default class NavBar extends React.Component {
   render() {
     return (
-      <div>
-        <button
+
+
+      <div >
+        <button className="myButton"
           onClick={
             this.props.settings
               ? this.props.homePageReturn
@@ -15,7 +15,7 @@ export default class NavBar extends React.Component {
         >
           {this.props.settings ? "Home" : "Settings"}
         </button>
-        <button onClick={this.props.logOut}>Log Out </button>
+        <button className="myButton" onClick={this.props.logOut}>Log Out </button>
       </div>
     );
   }

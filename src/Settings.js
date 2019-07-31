@@ -36,6 +36,9 @@ export default class Setting extends React.Component {
   };
 
   updateUserSettings = () => {
+    const feet = this.state.feet
+    const inch = this.state.inch
+    const id = this.props.user.id
     const email = this.state.email;
     const number = this.state.number;
     const diabetes = this.state.diabetes;
@@ -56,8 +59,9 @@ export default class Setting extends React.Component {
         Accepts: "application/json"
       },
       body: JSON.stringify({
-        email,
-        number,
+        id,
+        feet,
+        inch,
         diabetes,
         alochol,
         education,
@@ -73,13 +77,14 @@ export default class Setting extends React.Component {
     })
       .then(r => r.json())
       .then(userUpdate => {
+        debugger
         this.props.setCurrentUser(userUpdate);
         this.props.homePageReturn();
       });
   };
 
   render() {
-    console.log(this.props.user);
+    console.log(this.state);
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -101,7 +106,7 @@ export default class Setting extends React.Component {
 
           <div onChange={e => this.setState({ age: +e.target.value })}>
             Age:
-            <input value={this.state.number} type="number" min="18" max="85" />
+            <input value={this.state.age} type="number" min="18" max="85" />
           </div>
           <div onChange={e => this.setState({ weight: +e.target.value })}>
             Weight:
@@ -134,8 +139,7 @@ export default class Setting extends React.Component {
           </div>
           <div onChange={e => this.setState({ education: e.target.value })}>
             Education:
-            <select>
-              <option value={this.props.user.education} />
+            <select value={this.state.education}>
               <option value="_8_TO_11">High School Drop Out</option>
               <option value="HIGH_SCHOOL">High School</option>
               <option value="SOME_COLLEGE">College</option>
@@ -144,8 +148,7 @@ export default class Setting extends React.Component {
           </div>
           <div onChange={e => this.setState({ relationship: e.target.value })}>
             Relationship Status:
-            <select>
-              <option value={this.props.user.relationship} />
+            <select value={this.state.relationship} >
               <option value="NEVER_MARRIED">Never Married</option>
               <option value="MARRIED">Married</option>
               <option value="SEPARATED">Separated</option>
@@ -155,16 +158,14 @@ export default class Setting extends React.Component {
           </div>
           <div onChange={e => this.setState({ work: e.target.value })}>
             Work Status:
-            <select>
-              <option value={this.props.user.work} />
+            <select value={this.state.work}>
               <option value="WORKING">Working</option>
               <option value="RETIRED">Retired</option>
             </select>
           </div>
           <div onChange={e => this.setState({ income: e.target.value })}>
             Income:
-            <select>
-              <option value={this.props.user.income} />
+            <select value={this.state.income}>
               <option value="40MINUS"> {"<40k"} </option>
               <option value="40-60"> 40-60k </option>
               <option value="60-80"> 60-80k </option>
@@ -173,8 +174,7 @@ export default class Setting extends React.Component {
           </div>
           <div onChange={e => this.setState({ exercise: e.target.value })}>
             Exercise:
-            <select>
-              <option value={this.props.user.exercise} />
+            <select  value={this.state.exercise} >
               <option value="NEVER">Never</option>
               <option value="RARELY">Rarely</option>
               <option value="_1_TO_3_PER_MONTH">1-3 Times per Month</option>
@@ -184,8 +184,8 @@ export default class Setting extends React.Component {
           </div>
           <div onChange={e => this.setState({ health: e.target.value })}>
             Health:
-            <select>
-              <option value={this.props.user.health} />
+            <select value={this.state.health}>
+
               <option value="POOR">Poor</option>
               <option value="FAIR">Fair</option>
               <option value="GOOD">Good</option>
@@ -195,23 +195,21 @@ export default class Setting extends React.Component {
           </div>
           <div onChange={e => this.setState({ diabetes: e.target.value })}>
             Diabetes?:
-            <select>
-              <option value={this.props.user.diabetes} />
+            <select value={this.state.diabetes}>
               <option value="TRUE">Yes</option>
               <option value="FALSE">No</option>
             </select>
           </div>
           <div onChange={e => this.setState({ alochol: e.target.value })}>
             Drinking:
-            <select>
-              <option value={this.props.user.alochol} />
+            <select value={this.state.alochol} >
               <option value="ZERO">None</option>
               <option value="_LT_2_PER_WEEK">Less than 2 per Week</option>
               <option value="_LT_1_PER_DAY">2-7 per Week</option>
               <option value="_MT_1_PER_DAY">8 or More per Week</option>
             </select>
           </div>
-          <button type="submit">finish</button>
+          <button className="myButton" type="submit">Change Settings</button>
         </form>
       </div>
     );

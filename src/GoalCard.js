@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link, BrowserRouter as Router, Route } from 'react-router-dom'
 
 
 export default class GoalCard extends React.Component {
@@ -79,35 +78,39 @@ sendEmail = () =>{
 
     render(){
       return (
-        <div>
-       <h1>  Title: </h1>
-        {this.props.name}
-        <br/>
-        <h3>  Description </h3>
-        <br />
-        {this.props.details}
-        <br/>
-       <h3>  You made this:{this.renderTimeStamp()} Age: {this.props.age} day
-        </h3>
-        <button onClick={this.sendText}> Send Text Notification </button>
-        <br/>
-        <button onClick={this.sendEmail}> Send Email Notification </button>
-        <br/>
-        <button onClick={()=>this.props.editGoalClick(this.props)}> Edit </button>
-        <button onClick={()=>this.props.toggleGoalNotifications(this.props)}> {this.props.notifications? "Notifications Off" : "Notifications On"} </button>
-        <button onClick={()=>this.deleteGoal(this.props.id)}> Delete </button>
-        <button onClick={()=>this.props.toggleGoalSatus(this.props)}> {this.props.completed? "mark undone" : "mark done "} </button>
+    <ul>
+       <li>
+          <input type="radio" name="select" class="accordion-select" checked />
+          <div class="accordion-title">
+              <span>{this.props.name}</span>
+          </div>
+          <div class="accordion-content">
+          {this.props.details}
 
-        {this.props.completed?
-        <h2> completed</h2>
-        :
-        <h2> not completed</h2>
-        }
+          {this.props.completed?
+          <h2 style={{color: "green"}}> completed</h2>
+          :
+          <h2 style={{color:'red'}}> not completed</h2>
+          }
 
-        -----------------------------------
-        -----------------------------------
-        -----------------------------------
-        </div>
+          <h3>  You made this:{this.renderTimeStamp()} Age: {this.props.age} day
+           </h3>
+           <footer>
+           <button  className="myButton" onClick={this.sendText}> Send Text Notification </button>
+           <br/>
+           <button className="myButton" onClick={this.sendEmail}> Send Email Notification </button>
+           <br/>
+           <button className="myButton" onClick={()=>this.props.editGoalClick(this.props)}> Edit </button>
+           <button className="myButton" onClick={()=>this.props.toggleGoalNotifications(this.props)}> {this.props.notifications? "Notifications Off" : "Notifications On"} </button>
+             <button className="myButton" onClick={()=>this.deleteGoal(this.props.id)}> Delete </button>
+           <button className="myButton" onClick={()=>this.props.toggleGoalSatus(this.props)}> {this.props.completed? "mark undone" : "mark done "} </button>
+
+
+           </footer>
+          </div>
+          <div class="accordion-separator"></div>
+      </li>
+  </ul>
       )
     }
   }

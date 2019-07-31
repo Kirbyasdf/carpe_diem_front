@@ -1,10 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import WebcamVerify from "./WebcamVerify"
 
 export default class LoginForm extends React.Component {
   state = {
     email: "",
-    password: ""
+    img: ""
   };
 
   handleChange = event => {
@@ -13,7 +13,9 @@ export default class LoginForm extends React.Component {
     });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e, img) => {
+    const image = img
+    const email = this.state.email
     e.preventDefault();
     fetch("http://localhost:4000/api/v1/login", {
       method: "POST",
@@ -21,15 +23,24 @@ export default class LoginForm extends React.Component {
         "Content-Type": "application/json",
         Accepts: "application/json"
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify({
+        image,
+        email,
+      })
     })
       .then(res => res.json())
       .then(response => {
+        console.log(response)
+        if (response.message === false || response.status === 500){
+          return alert("that ain't it")
+        }
         this.props.setCurrentUser(response);
         this.props.activateUser();
-        this.props.history.push("/");
       });
   };
+
+
+
 
   render() {
     return (
@@ -41,15 +52,8 @@ export default class LoginForm extends React.Component {
           value={this.state.email}
           placeholder="Email"
         />
-        <label>Password</label>
-        <input
-          onChange={this.handleChange}
-          type="password"
-          name="password"
-          value={this.state.password}
-          placeholder="Password"
-        />
-        <button type="submit">Submit</button>
+
+        <WebcamVerify handleSubmit={this.handleSubmit}/>
       </form>
     );
   }

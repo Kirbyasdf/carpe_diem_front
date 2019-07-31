@@ -4,7 +4,6 @@ import GoalCard from "./GoalCard";
 import CreateGoalForm from "./CreateGoalForm";
 import EditGoalForm from "./EditGoalForm";
 import Settings from "./Settings";
-import { Link, BrowserRouter as Router, Route } from "react-router-dom";
 
 export default class HomePage extends React.Component {
   state = {
@@ -51,28 +50,30 @@ export default class HomePage extends React.Component {
   homepageRender = () => {
     return (
       <div>
-        <h1>
+        <h1 style={{color: "white"}}>
           {" "}
           Welcome this will be the home page for {this.props.user.name} who has{" "}
           {this.props.user.tltl} years left
         </h1>
-        <button onClick={()=>this.toggalAllNotifications(this.props.user)} >{this.props.user.note_toggle? "Disable All Notifications" : "Enable All Notifications"}</button>
-        <button onClick={() => this.setState({ page: 1 })}>Add Goal</button>
-        {this.props.user.goals
-          ? this.props.user.goals.map(goal => {
-              return (
-                <GoalCard
-                  key={goal.id}
-                  {...goal}
-                  editGoalClick={this.editGoalClick}
-                  deleteStateGoal={this.props.deleteStateGoal}
-                  toggleGoalSatus={this.props.toggleGoalSatus}
-                  user={this.props.user}
-                  toggleGoalNotifications={this.props.toggleGoalNotifications}
-                />
-              );
-            })
-          : null}
+        <button className="myButton" onClick={()=>this.toggalAllNotifications(this.props.user)} >{this.props.user.note_toggle? "Disable All Notifications" : "Enable All Notifications"}</button>
+        <button className="myButton" onClick={() => this.setState({ page: 1 })}>Add Goal</button>
+          <div className="accordion">
+          {this.props.user.goals
+            ? this.props.user.goals.map(goal => {
+                return (
+                  <GoalCard
+                    key={goal.id}
+                    {...goal}
+                    editGoalClick={this.editGoalClick}
+                    deleteStateGoal={this.props.deleteStateGoal}
+                    toggleGoalSatus={this.props.toggleGoalSatus}
+                    user={this.props.user}
+                    toggleGoalNotifications={this.props.toggleGoalNotifications}
+                  />
+                );
+              })
+            : null}
+            </div>
       </div>
     );
   };

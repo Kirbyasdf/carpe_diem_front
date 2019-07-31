@@ -7,27 +7,19 @@ export default class WebcamCapture extends React.Component {
     this.webcam = webcam;
   };
 
-  capture = (e) => {
-    e.preventDefault()
-    const email = this.props.email
+  verify = () => {
     const imageSrc = this.webcam.getScreenshot();
-
+    debugger
     fetch("http://localhost:4000/api/v1/imgecap",{
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
+        "Content-Tpye": "application/json",
+        Accepts: "appliocation/json"
       },
       body:JSON.stringify({
-        imageSrc,
-        email
+        imageSrc
       })
-    }).then(r=>r.json())
-    .then(r=>{
-      console.log(r)
-      this.props.renderLC()
-
-    })
+      })
   };
 
   render() {
@@ -51,7 +43,7 @@ export default class WebcamCapture extends React.Component {
         />
         <br />
 
-        <button className="myButton" onClick={(e)=>this.capture(e)}>Capture photo</button>
+        <button className="myButton" onClick={(e)=>this.props.handleSubmit(e, this.webcam.getScreenshot())}>Verify Login</button>
       </div>
     );
   }

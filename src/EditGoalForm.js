@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, BrowserRouter as Router, Route } from "react-router-dom";
 
 export default class EditGoalForm extends React.Component {
   state = {
@@ -76,7 +75,7 @@ export default class EditGoalForm extends React.Component {
           </select>
         </div>
         <br />
-        <button type="submit">Submit</button>
+        <button className="myButton" type="submit">Submit</button>
       </form>
     );
   }

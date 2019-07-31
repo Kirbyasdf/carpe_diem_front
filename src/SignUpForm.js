@@ -1,6 +1,5 @@
 import React from "react";
-import LifeCalc from "./LifeCalc";
-import { Link, BrowserRouter as Router, Route } from "react-router-dom";
+import WebcamCapture from "./WebcamCapture";
 
 export default class SignUpForm extends React.Component {
   state = {
@@ -8,7 +7,9 @@ export default class SignUpForm extends React.Component {
     number: "",
     email: "",
     password: "",
-    passwordConfirmation: ""
+    passwordConfirmation: "",
+    user: "",
+    signUp: false
   };
 
   handleChange = event => {
@@ -17,8 +18,8 @@ export default class SignUpForm extends React.Component {
     });
   };
 
-
   createUser = e => {
+    e.preventDefault();
     if (this.state.password != this.state.passwordConfirmation) {
       return alert("passwords do not match");
       e.preventDefault();
@@ -42,19 +43,21 @@ export default class SignUpForm extends React.Component {
         })
       })
         .then(r => r.json())
-        .then(res => {
-          this.props.setCurrentUser(res);
+        .then(newUser => {
+          this.setState({ user: newUser, signUp: true }, () =>
+            this.props.setCurrentUser(this.state.user)
+          );
         });
     }
   };
 
-limit = (element) =>{
-    var max_chars = 10
+  limit = element => {
+    var max_chars = 10;
 
-    if(element.target.value.length > max_chars) {
-        element.target.value = element.target.value.substr(0, max_chars);
+    if (element.target.value.length > max_chars) {
+      element.target.value = element.target.value.substr(0, max_chars);
     }
-}
+  };
 
   // handleSubmit = () => {
   //   debugger
@@ -66,62 +69,70 @@ limit = (element) =>{
   // }
 
   render() {
+    console.log(this.state.signUp);
     return (
-      <form>
-        <label>Name</label>
-        <input
-          onChange={this.handleChange}
-          name="name"
-          value={this.state.name}
-          placeholder="Name"
-          required
-        />
-        <br />
-        <label>Email</label>
-        <input
-          onChange={this.handleChange}
-          name="email"
-          type="email"
-          value={this.state.email}
-          placeholder="email"
-          required
-        />
-        <br />
-        <label>Number</label>
-        <input
-          onChange={this.handleChange}
-          name="number"
-          value={this.state.number}
-          placeholder="number"
-          onKeyDown={(e)=>this.limit(e)}
-          onKeyUp={(e)=>this.limit(e)}
-          required
-        />
-        <br />
-        <label>Password</label>
-        <input
-          onChange={this.handleChange}
-          type="password"
-          name="password"
-          value={this.state.password}
-          placeholder="Password"
-          required
-        />
-        <br />
-        <label>Password Confirmation</label>
-        <input
-          onChange={this.handleChange}
-          type="password"
-          name="passwordConfirmation"
-          value={this.state.passwordConfirmation}
-          placeholder="Password Confirmation"
-          required
-        />
-        <br />
-        <Link to="/lc">
-          <button onClick={e => this.createUser(e)}> Next </button>
-        </Link>
-      </form>
+      <div>
+        {this.state.signUp ? (
+          <WebcamCapture
+            renderLC={this.props.renderLC}
+            email={this.state.email}
+          />
+        ) : (
+          <form>
+            <label>Name</label> ->
+            <input
+              onChange={this.handleChange}
+              name="name"
+              value={this.state.name}
+              placeholder="Name"
+              required
+            />
+            <br />
+            <label>Email</label> ->
+            <input
+              onChange={this.handleChange}
+              name="email"
+              type="email"
+              value={this.state.email}
+              placeholder="email"
+              required
+            />
+            <br />
+            <label>Number</label> -> +1{" "}
+            <input
+              onChange={this.handleChange}
+              name="number"
+              value={this.state.number}
+              placeholder="number"
+              onKeyDown={e => this.limit(e)}
+              onKeyUp={e => this.limit(e)}
+              required
+            />
+            <br />
+            <label>Password</label> ->
+            <input
+              onChange={this.handleChange}
+              type="password"
+              name="password"
+              value={this.state.password}
+              placeholder="Password"
+              required
+            />
+            <br />
+            <label>Password Confirmation</label> ->
+            <input
+              onChange={this.handleChange}
+              type="password"
+              name="passwordConfirmation"
+              value={this.state.passwordConfirmation}
+              placeholder="Password Confirmation"
+              required
+            />
+            <br />
+            <button className="myButton" onClick={e => this.createUser(e)}> Next </button>
+          </form>
+        )}
+      </div>
     );
   }
 }

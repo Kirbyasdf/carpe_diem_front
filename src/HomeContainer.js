@@ -46,7 +46,6 @@ export default class HomeContainer extends React.Component {
       currentUser: null
     });
     // localStorage.removeItem("token")
-    this.props.history.push("/");
   };
 
   toggleGoalSatus = goal => {

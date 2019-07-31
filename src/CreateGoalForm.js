@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, BrowserRouter as Router, Route } from "react-router-dom";
 
 export default class CreateGoalForm extends React.Component {
   state = {
@@ -37,6 +36,7 @@ export default class CreateGoalForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>Title</label>
+        <br/>x
         <input
           onChange={this.handleChange}
           name="name"
@@ -45,13 +45,15 @@ export default class CreateGoalForm extends React.Component {
         />
         <br />
         <label>Descriptions</label>
-        <input
+        <br/>
+        <textarea class="textarea"
           onChange={this.handleChange}
           type="details"
           name="details"
           value={this.state.details}
           placeholder="Description"
-        />
+          >
+          </textarea>
         <br />
         <label>Notification Type </label>
         <div
@@ -75,7 +77,7 @@ export default class CreateGoalForm extends React.Component {
           </select>
         </div>
         <br />
-        <button type="submit">Submit</button>
+        <button className="myButton" type="submit">Submit</button>
       </form>
     );
   }
