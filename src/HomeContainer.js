@@ -48,7 +48,7 @@ export default class HomeContainer extends React.Component {
     // localStorage.removeItem("token")
   };
 
-  toggleGoalSatus = goal => {
+  toggleGoalSatus = (goal) => {
     fetch(`http://localhost:4000/api/v1/status`, {
       method: "PATCH",
       headers: {
@@ -120,7 +120,7 @@ export default class HomeContainer extends React.Component {
           />
         ) : (
           <div>
-          <UserContainer
+          <UserContainer 
             activateUser={this.activateUser}
             currentUser={this.state.currentUser}
             setCurrentUser={this.setCurrentUser}

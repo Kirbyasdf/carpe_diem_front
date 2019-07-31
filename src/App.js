@@ -4,7 +4,7 @@ import HomeContainer from "./HomeContainer"
 
 function App() {
   return (
-    <div  className="mainbody">
+    <div >
      <HomeContainer  />
     </div>
 

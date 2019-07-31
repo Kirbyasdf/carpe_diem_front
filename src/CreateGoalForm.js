@@ -34,9 +34,9 @@ export default class CreateGoalForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form id="mainBody" style={{color:"white"}} onSubmit={this.handleSubmit}>
         <label>Title</label>
-        <br/>x
+        <br/>
         <input
           onChange={this.handleChange}
           name="name"

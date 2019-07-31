@@ -1,33 +1,30 @@
 body {
   height: 100%;
   display: grid;
-  background-color: black
+  background-color: black;
+  color: yellow;
+
 }
 
 
 
 
-#card {
-  height: 500px;
-  width: 500px;
-  background-color: yellow;
-  padding: 50px, 50px;
-  overflow: scroll;
+#mainBody {
+  position: fixed;
+  left: 40%;
+}
+
+#main {
+  height: 100%;
+  display: grid;
+  background-color: black;
+  background-image:url("https://i.pinimg.com/originals/99/99/23/9999236097e2481356e509abbb420bc0.gif");
+   background-repeat: no-repeat;
+   background-size: 100%, 100%;
 }
 
 
 
-
-
-
-#cardContainer {
-  display: flex;
-  padding: 0 -15px;
-  flex-wrap: wrap;
-  height: auto;
-  width: 80%;
-  background-color: pink
-}
 
 .myButton {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #000000), color-stop(1, #000000));
@@ -46,7 +43,7 @@ body {
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Courier New;
-	font-size:18px;
+	font-size:12px;
 	font-weight:bold;
 	padding:4px 43px;
 	text-decoration:none;
@@ -67,18 +64,19 @@ body {
 	top:1px;
 }
 
+
 .accordion {
     -webkit-box-shadow: 0px 75px 35px -55px rgba(10, 30, 65, 0.6);
     -moz-box-shadow: 0px 75px 35px -55px rgba(10, 30, 65, 0.6);
     box-shadow: 0px 75px 35px -55px rgba(10, 30, 65, 0.6);
     font-family: Arial, Helvetica, sans-serif;
-    border-color: #000000;
+    border-color: #ffffff;
     border-style: solid;
-    border-width: 0px;
-    border-radius: 34px;
+    border-width: 4px;
+    border-radius: 6px;
     margin: 0 auto;
-    height: 290px;
-    width: 1122px;
+    height: 280px;
+    width: 1284px;
 }
 
 .accordion > ul > li,
@@ -89,33 +87,33 @@ body {
 }
 
 .accordion > ul > li {
-    background-color: #0f151e;
-    margin-right: -570px;
+    background-color: #58ecc9;
+    margin-right: -780px;
     margin-bottom: -0px;
 }
 
 .accordion-select:checked ~ .accordion-separator {
-    margin-right: 570px;
+    margin-right: 780px;
     margin-bottom: 0px;
 }
 
 .accordion-title,
 .accordion-select  {
-    background-color: #000000;
+    background-color: #080808;
     color: #ffffff;
-    width: 45px;
-    height: 290px;
-    font-size: 26px;
+    width: 40px;
+    height: 280px;
+    font-size: 24px;
 }
 
 .accordion-title span {
-    margin-bottom: 23px;
-    margin-left: 23px;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 
 .accordion-select:hover ~ .accordion-title,
 .accordion-select:checked ~ .accordion-title {
-    background-color: #ee7d15;
+    background-color: #df6b00;
 }
 
  .accordion-title span  {
@@ -126,21 +124,21 @@ body {
     -ms-writing-mode: lr-bt;
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     margin-left: 0px;
-    line-height: 45px;
+    line-height: 40px;
 }
 
 .accordion-content {
     background-color: #000000;
     color: #ffffff;
-    height: 244px;
-    width: 524px;
-    padding: 23px;
+    height: 218px;
+    width: 718px;
+    padding: 31px;
 }
 
 .accordion-title,
 .accordion-select:checked ~ .accordion-content {
-    margin-right: 1px;
-    margin-bottom: 1px;
+    margin-right: 2px;
+    margin-bottom: 2px;
 }
 
 /* Do not change following properties, they aren't

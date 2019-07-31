@@ -50,13 +50,17 @@ export default class HomePage extends React.Component {
   homepageRender = () => {
     return (
       <div>
+        <button className="myButton" onClick={()=>this.toggalAllNotifications(this.props.user)} >{this.props.user.note_toggle? "Disable All Notifications" : "Enable All Notifications"}</button>
         <h1 style={{color: "white"}}>
           {" "}
           Welcome this will be the home page for {this.props.user.name} who has{" "}
           {this.props.user.tltl} years left
         </h1>
-        <button className="myButton" onClick={()=>this.toggalAllNotifications(this.props.user)} >{this.props.user.note_toggle? "Disable All Notifications" : "Enable All Notifications"}</button>
+
         <button className="myButton" onClick={() => this.setState({ page: 1 })}>Add Goal</button>
+        <br/>
+        <br/>
+        <br/>
           <div className="accordion">
           {this.props.user.goals
             ? this.props.user.goals.map(goal => {

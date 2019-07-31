@@ -97,13 +97,14 @@ sendEmail = () =>{
            </h3>
            <footer>
            <button  className="myButton" onClick={this.sendText}> Send Text Notification </button>
-           <br/>
            <button className="myButton" onClick={this.sendEmail}> Send Email Notification </button>
            <br/>
+           <button className="myButton"  onClick={()=>this.props.toggleGoalNotifications(this.props)}> {this.props.notifications? "Notifications Off" : "Notifications On"} </button>
+           <button className="myButton"  onClick={()=>this.props.toggleGoalSatus(this.props)}> {this.props.completed? "mark undone" : "mark done "} </button>
            <button className="myButton" onClick={()=>this.props.editGoalClick(this.props)}> Edit </button>
-           <button className="myButton" onClick={()=>this.props.toggleGoalNotifications(this.props)}> {this.props.notifications? "Notifications Off" : "Notifications On"} </button>
-             <button className="myButton" onClick={()=>this.deleteGoal(this.props.id)}> Delete </button>
-           <button className="myButton" onClick={()=>this.props.toggleGoalSatus(this.props)}> {this.props.completed? "mark undone" : "mark done "} </button>
+
+           <button style={{color: "red"}} className="myButton" onClick={()=>this.deleteGoal(this.props.id)}> Delete </button>
+
 
 
            </footer>

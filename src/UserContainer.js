@@ -38,8 +38,10 @@ renderUserInput =()=> {
 
 
 splashPageRender = () =>{
-  return <div >
+  return <div id="mainBody">
             <button className="myButton" onClick={()=>this.setState({page: 3})} > Log In </button>
+            <br/>
+            <br/>
             <br/>
             <button className="myButton" onClick={()=>this.setState({page: 1})} > Sign Up </button>
           </div>
@@ -54,7 +56,10 @@ renderLC =() => {
   render() {
     console.log(this.state)
     return (
-      <div>
+      <div >
+      <br/>
+      <br/>
+      <br/>
       {this.renderUserInput()}
       </div>
     );

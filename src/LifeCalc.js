@@ -94,7 +94,7 @@ export default class LifeCalc extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="mainBody" style={{color:"white"}}>
         {this.state.completed ? (
           <div>
             {" "}
@@ -231,7 +231,7 @@ export default class LifeCalc extends React.Component {
                 <option value="_MT_1_PER_DAY">8 or More per Week</option>
               </select>
             </div>
-            <button type="submit">finish</button>
+            <button className="myButton" type="submit">finish</button>
           </form>
         )}
       </div>

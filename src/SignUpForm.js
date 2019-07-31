@@ -71,7 +71,7 @@ export default class SignUpForm extends React.Component {
   render() {
     console.log(this.state.signUp);
     return (
-      <div>
+      <div style={{color:"white"}}>
         {this.state.signUp ? (
           <WebcamCapture
             renderLC={this.props.renderLC}
