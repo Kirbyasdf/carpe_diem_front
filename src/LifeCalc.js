@@ -84,7 +84,6 @@ export default class LifeCalc extends React.Component {
     })
       .then(r => r.json())
       .then(newUser => {
-        tikTok.play()
         this.props.setCurrentUser(newUser);
         this.complete();
         const redirect = () =>
@@ -98,7 +97,7 @@ export default class LifeCalc extends React.Component {
 
   render() {
     return (
-      <div id="mainBody" style={{color:"white"}}>
+      <div id="signUp" style={{color:"white"}}>
         {this.state.completed ? (
           <div>
             <h2>
@@ -118,8 +117,10 @@ export default class LifeCalc extends React.Component {
                 Time Started {this.props.currentUser.life_exp - this.props.currentUser.tltl} years ago....
                 </h2>
                   <h1>
-                Time left
+                Time left is counting
+                <div className="lcTime">
                  <Countdown user={this.props.currentUser} />
+                 </div>
                 </h1>
                 <div id="grim" >
                   <img src={img} />
@@ -152,7 +153,7 @@ export default class LifeCalc extends React.Component {
               Age:
               <input type="number" min="18" max="85" required />
             </div>
-              <br/>
+            {" "}
             <div onChange={e => this.setState({ weight: +e.target.value })}>
               Weight:
               <input type="number" min="75" max="400" required /> lbs

@@ -49,7 +49,6 @@ splashPageRender = () =>{
 
 
 renderLC =() => {
-  debugger
   this.setState({page: 2})
 }
 

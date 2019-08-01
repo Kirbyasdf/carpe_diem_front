@@ -25,6 +25,10 @@ body {
 }
 
 #mainBody {
+
+}
+
+#signUp {
   position: fixed;
   left: 40%;
 }
@@ -42,6 +46,11 @@ body {
   background-image:url("https://i.pinimg.com/originals/99/99/23/9999236097e2481356e509abbb420bc0.gif");
    background-repeat: no-repeat;
    background-size: 100%, 100%;
+}
+
+.lcTime{    position: fixed;
+    right: 15%;
+    bottom: 20%;
 }
 
 .lifeLine{
@@ -72,8 +81,17 @@ top: 36%;
   border:3px solid #ffffff;
   border-style: ridge;
   right: -249px;
-  position: absolute;
+  align-content: center;
+  /* position: absolute; */
 
+}
+
+.photoBooth > video {
+  margin-left: 5vw;
+}
+
+.photoBooth > button {
+  margin-left: 12vw;
 }
 
 .inputEmail {
@@ -83,7 +101,6 @@ top: 36%;
 }
 
 .inputButton{
-position: absolute;
 z-index: 500;
 right: 74px
 

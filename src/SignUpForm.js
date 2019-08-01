@@ -77,7 +77,7 @@ export default class SignUpForm extends React.Component {
   render() {
     console.log(this.state.signUp);
     return (
-      <div id="mainBody" style={{color:"white"}}>
+      <div style={{color:"white"}}>
         {this.state.signUp ? (
           <WebcamCapture
             renderLC={this.props.renderLC}
@@ -85,7 +85,7 @@ export default class SignUpForm extends React.Component {
           />
         ) : (
             <h4>
-          <form>
+          <form id="signUp" >
             <label>Name</label> ->
             <input
               onChange={this.handleChange}
@@ -141,7 +141,7 @@ export default class SignUpForm extends React.Component {
               required
             />
             <br />
-              <br/>
+            <br />
             <button className="myButton" onClick={e => this.createUser(e)}> Next </button>
           </form>
             </h4>
