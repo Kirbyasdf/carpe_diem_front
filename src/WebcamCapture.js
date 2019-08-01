@@ -9,6 +9,7 @@ export default class WebcamCapture extends React.Component {
 
   capture = (e) => {
     e.preventDefault()
+    this.props.renderLC()
     const email = this.props.email
     const imageSrc = this.webcam.getScreenshot();
 
@@ -25,7 +26,6 @@ export default class WebcamCapture extends React.Component {
     }).then(r=>r.json())
     .then(r=>{
       console.log(r)
-      this.props.renderLC()
 
     })
   };

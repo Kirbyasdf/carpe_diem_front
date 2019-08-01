@@ -83,10 +83,9 @@ top: 36%;
 }
 
 .inputButton{
-  position: fixed;
-left: 38%;
-top: 63%;
-z-index: 500
+position: absolute;
+z-index: 500;
+right: 74px
 
 }
 
