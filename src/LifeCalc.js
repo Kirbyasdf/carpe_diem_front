@@ -1,6 +1,7 @@
 import React from "react";
 import Countdown from "./CountDown"
 import img from './grim.png'
+import tikTok from './tikTok.mp3'
 
 export default class LifeCalc extends React.Component {
   state = {
@@ -83,6 +84,7 @@ export default class LifeCalc extends React.Component {
     })
       .then(r => r.json())
       .then(newUser => {
+        tikTok.play()
         this.props.setCurrentUser(newUser);
         this.complete();
         const redirect = () =>

@@ -59,6 +59,13 @@ body {
 
 }
 
+.clock{
+ width: 50px;
+left: 60%;
+position: fixed;
+top: 36%;
+}
+
 .photoBooth {
   border-radius: 3px;
   border-color: white;
@@ -79,6 +86,34 @@ body {
   position: fixed;
 left: 38%;
 top: 63%;
+z-index: 500
+
+}
+
+input {
+border-width: 0;
+border-bottom-width: 5px;
+border-bottom: solid white;
+background-color: transparent;
+color: white;
+font-size: 1em;
+
+
+}
+
+::placeholder{
+  color: white;
+  font-size: 1.5em;
+ font-style: italic;
+}
+
+select{
+  border-width: 1;
+  border-bottom-width: 5px;
+  border-bottom: solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 1em;
 
 }
 
@@ -144,7 +179,7 @@ top: 63%;
 }
 
 .accordion > ul > li {
-    background-color: #58ecc9;
+    background-color: black;
     margin-right: -780px;
     margin-bottom: -0px;
 }

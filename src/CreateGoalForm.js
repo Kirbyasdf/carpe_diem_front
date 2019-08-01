@@ -34,8 +34,8 @@ export default class CreateGoalForm extends React.Component {
 
   render() {
     return (
+      <h4>
       <form id="mainBody" style={{color:"white"}} onSubmit={this.handleSubmit}>
-        <label>Title</label>
         <br/>
         <input
           onChange={this.handleChange}
@@ -79,6 +79,7 @@ export default class CreateGoalForm extends React.Component {
         <br />
         <button className="myButton" type="submit">Submit</button>
       </form>
+        </h4>
     );
   }
 }

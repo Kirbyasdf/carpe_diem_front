@@ -35,6 +35,7 @@ export default class EditGoalForm extends React.Component {
 
   render() {
     return (
+      <h4>
       <form id="mainBody"  style={{color:"white"}} onSubmit={this.handleSubmit}>
         <label>Title</label>
         <input
@@ -77,6 +78,7 @@ export default class EditGoalForm extends React.Component {
         <br />
         <button className="myButton" type="submit">Submit</button>
       </form>
+      </h4>
     );
   }
 }

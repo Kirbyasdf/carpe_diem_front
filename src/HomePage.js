@@ -6,6 +6,7 @@ import EditGoalForm from "./EditGoalForm";
 import Settings from "./Settings";
 import Countdown from "./CountDown"
 import img from "./lifeLine.gif"
+import clock from "./clock.gif"
 
 
 export default class HomePage extends React.Component {
@@ -64,6 +65,7 @@ export default class HomePage extends React.Component {
             {(this.props.user.tltl*365)*24} hours
              <br/>
             {((this.props.user.tltl*365)*24)*60} minutes
+            <img className="clock" src={clock} />
           <Countdown user={this.props.user}/> <img className="lifeLine" src={img} />
         </h1>
 
