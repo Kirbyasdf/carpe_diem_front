@@ -59,7 +59,7 @@ export default class WebcamCapture extends React.Component {
         <br />
 
 
-        <button   className="myButton" onClick={(e)=>this.props.handleSubmit(e, this.webcam.getScreenshot())}>Verify Login</button>
+        <button className="myButton inputButton" onClick={(e)=>this.props.handleSubmit(e, this.webcam.getScreenshot())}>Verify Login</button>
       </div>
     );
   }

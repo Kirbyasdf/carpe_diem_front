@@ -89,7 +89,7 @@ export default class LifeCalc extends React.Component {
           setTimeout(() => {
             this.props.activateUser();
             clearTimeout(redirect);
-          }, 500000);
+          }, 10000);
         redirect();
       });
   };
@@ -101,20 +101,20 @@ export default class LifeCalc extends React.Component {
           <div>
             <h2>
               Your Life Expectency is
-              {" "} <h1>{this.props.currentUser.life_exp}</h1> years....
+              {" "} <h1>{this.props.currentUser.life_exp} years....</h1>
               </h2>
               <br/>
               <h2>
-              that mean you have {this.props.currentUser.tltl} years left to
+              that mean you have {this.props.currentUser.tltl} years left to....
               </h2>
               <br/>
               <h1>
               MAKE ALL YOUR DREAMS COME TRUE ;)!
               </h1>
               <br/>
-                <h3>
+                <h2>
                 Time Started {this.props.currentUser.life_exp - this.props.currentUser.tltl} years ago....
-                </h3>
+                </h2>
                   <h1>
                 Time left
                  <Countdown user={this.props.currentUser} />

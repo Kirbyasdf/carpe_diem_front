@@ -52,7 +52,7 @@ export default class LoginForm extends React.Component {
     return (
       <form id="mainBody" style={{color:"white"}} onSubmit={this.handleSubmit}>
         <WebcamVerify handleSubmit={this.handleSubmit}/>
-        <input style={emailStyle}
+        <input className="inputEmail"  
           onChange={this.handleChange}
           name="email"
           value={this.state.email}

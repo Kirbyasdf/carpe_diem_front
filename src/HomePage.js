@@ -5,6 +5,7 @@ import CreateGoalForm from "./CreateGoalForm";
 import EditGoalForm from "./EditGoalForm";
 import Settings from "./Settings";
 import Countdown from "./CountDown"
+import img from "./lifeLine.gif"
 
 
 export default class HomePage extends React.Component {
@@ -56,8 +57,14 @@ export default class HomePage extends React.Component {
         <button className="myButton" onClick={()=>this.toggalAllNotifications(this.props.user)} >{this.props.user.note_toggle? "Disable All Notifications" : "Enable All Notifications"}</button>
         <h1 style={{color: "white"}}>
           {" "}
-          Welcome {this.props.user.name} you have has {this.props.user.tltl} years left to live!
-          <Countdown user={this.props.user}/>
+           {this.props.user.name.toUpperCase()} you have have {this.props.user.tltl} years
+           <br/>
+            {this.props.user.tltl*365} days
+             <br/>
+            {(this.props.user.tltl*365)*24} hours
+             <br/>
+            {((this.props.user.tltl*365)*24)*60} minutes
+          <Countdown user={this.props.user}/> <img className="lifeLine" src={img} />
         </h1>
 
         <button className="myButton" onClick={() => this.setState({ page: 1 })}>Add Goal</button>

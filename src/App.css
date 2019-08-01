@@ -6,6 +6,14 @@ body {
 
 }
 
+#splashBack{
+    background: url('./background.gif');
+    height: 500px;
+    position: absolute;
+    width: 500px;
+    right: 35%;
+}
+
 
 #grim{
   position: fixed;
@@ -36,16 +44,43 @@ body {
    background-size: 100%, 100%;
 }
 
+.lifeLine{
+      width: 267px;
+      height: 232px;
+      left: 63%;
+      position: fixed;
+      top: 0;
+}
+
+.count{
+  position: absolute;
+  right: 17%;
+  top: 37%;
+
+}
+
 .photoBooth {
   border-radius: 3px;
   border-color: white;
   border:3px solid #ffffff;
   border-style: ridge;
-
+  right: -249px;
+  position: absolute;
 
 }
 
+.inputEmail {
+  position: fixed;
+  left: 40%;
+  top: 57%;
+}
 
+.inputButton{
+  position: fixed;
+left: 38%;
+top: 63%;
+
+}
 
 
 .myButton {

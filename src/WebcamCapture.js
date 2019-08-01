@@ -51,7 +51,7 @@ export default class WebcamCapture extends React.Component {
         />
         <br />
 
-        <button className="myButton" onClick={(e)=>this.capture(e)}>Capture photo</button>
+        <button className="myButton inputButton" onClick={(e)=>this.capture(e)}>Capture photo</button>
       </div>
     );
   }

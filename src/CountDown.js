@@ -11,7 +11,7 @@ class Countdown extends Component {
   };
 
   componentDidMount() {
-    
+
     this.setState({
       timerOn: true,
       timerTime: this.state.timerTime,
@@ -36,7 +36,7 @@ class Countdown extends Component {
 
   render() {
     return (
-      <div className="Countdown">
+      <div className="Countdown" className="count">
           <div className="Countdown-label"> {this.state.timerTime} </div>
       </div>
     );

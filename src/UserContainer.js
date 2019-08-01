@@ -55,7 +55,7 @@ renderLC =() => {
   render() {
     console.log(this.state)
     return (
-      <div >
+      <div id="splashBack">
       <br/>
       <br/>
       <br/>
