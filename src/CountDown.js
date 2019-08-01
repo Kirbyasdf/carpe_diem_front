@@ -11,7 +11,7 @@ class Countdown extends Component {
   };
 
   componentDidMount() {
-    debugger
+    
     this.setState({
       timerOn: true,
       timerTime: this.state.timerTime,

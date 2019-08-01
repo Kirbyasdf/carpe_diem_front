@@ -7,7 +7,14 @@ body {
 }
 
 
-
+#grim{
+  position: fixed;
+      left: 0;
+      bottom: 50px;
+      text-align: left;
+      float: left !important;
+      height: 400px
+}
 
 #mainBody {
   position: fixed;

@@ -1,4 +1,6 @@
 import React from "react";
+import Countdown from "./CountDown"
+import img from './grim.png'
 
 export default class LifeCalc extends React.Component {
   state = {
@@ -87,7 +89,7 @@ export default class LifeCalc extends React.Component {
           setTimeout(() => {
             this.props.activateUser();
             clearTimeout(redirect);
-          }, 5000);
+          }, 500000);
         redirect();
       });
   };
@@ -97,12 +99,30 @@ export default class LifeCalc extends React.Component {
       <div id="mainBody" style={{color:"white"}}>
         {this.state.completed ? (
           <div>
-            {" "}
-            Your Life Expectency is {this.props.currentUser.life_exp} years....
-            that mean you have {this.props.currentUser.tltl} years left to get
-            all your GOALS DONE!{" "}
-
-          </div>
+            <h2>
+              Your Life Expectency is
+              {" "} <h1>{this.props.currentUser.life_exp}</h1> years....
+              </h2>
+              <br/>
+              <h2>
+              that mean you have {this.props.currentUser.tltl} years left to
+              </h2>
+              <br/>
+              <h1>
+              MAKE ALL YOUR DREAMS COME TRUE ;)!
+              </h1>
+              <br/>
+                <h3>
+                Time Started {this.props.currentUser.life_exp - this.props.currentUser.tltl} years ago....
+                </h3>
+                  <h1>
+                Time left
+                 <Countdown user={this.props.currentUser} />
+                </h1>
+                <div id="grim" >
+                  <img src={img} />
+                </div>
+            </div>
         ) : (
           <form onSubmit={this.handleSubmit}>
             <div onChange={e => this.setState({ gender: e.target.value })}>
@@ -113,6 +133,7 @@ export default class LifeCalc extends React.Component {
                 <option value="FEMALE">Female</option>
               </select>
             </div>
+            <br/>
             <div onChange={e => this.setState({ race: e.target.value })}>
               Race:
               <select required>
@@ -124,14 +145,17 @@ export default class LifeCalc extends React.Component {
                 <option value="OTHER">Other</option>
               </select>
             </div>
+              <br/>
             <div onChange={e => this.setState({ age: +e.target.value })}>
               Age:
               <input type="number" min="18" max="85" required />
             </div>
+              <br/>
             <div onChange={e => this.setState({ weight: +e.target.value })}>
               Weight:
               <input type="number" min="75" max="400" required /> lbs
             </div>
+              <br/>
             <div>
               Height:
               <input
@@ -150,6 +174,7 @@ export default class LifeCalc extends React.Component {
               />{" "}
               in
             </div>
+              <br/>
             <div onChange={e => this.setState({ education: e.target.value })}>
               Education:
               <select required>
@@ -161,6 +186,7 @@ export default class LifeCalc extends React.Component {
                 <option value="COLLEGE_GRAD">College Level Equivalent</option>
               </select>
             </div>
+              <br/>
             <div
               onChange={e => this.setState({ relationship: e.target.value })}
             >
@@ -174,6 +200,7 @@ export default class LifeCalc extends React.Component {
                 <option value="WIDOWED">Windowed</option>
               </select>
             </div>
+              <br/>
             <div onChange={e => this.setState({ work: e.target.value })}>
               Work Status:
               <select required>
@@ -182,6 +209,7 @@ export default class LifeCalc extends React.Component {
                 <option value="RETIRED">Retired</option>
               </select>
             </div>
+              <br/>
             <div onChange={e => this.setState({ income: e.target.value })}>
               Income:
               <select required>
@@ -192,6 +220,7 @@ export default class LifeCalc extends React.Component {
                 <option value="80PLUS"> {">80k"} </option>
               </select>
             </div>
+              <br/>
             <div onChange={e => this.setState({ exercise: e.target.value })}>
               Exercise:
               <select required>
@@ -203,6 +232,7 @@ export default class LifeCalc extends React.Component {
                 <option value="_5_PLUS_PER_WEEK">5+ per Week</option>
               </select>
             </div>
+              <br/>
             <div onChange={e => this.setState({ health: e.target.value })}>
               Health:
               <select required>
@@ -214,6 +244,7 @@ export default class LifeCalc extends React.Component {
                 <option value="EXCELLENT">Excellent</option>
               </select>
             </div>
+              <br/>
             <div onChange={e => this.setState({ diabetes: e.target.value })}>
               Diabetes?:
               <select required>
@@ -222,6 +253,7 @@ export default class LifeCalc extends React.Component {
                 <option value="FALSE">No</option>
               </select>
             </div>
+              <br/>
             <div onChange={e => this.setState({ alochol: e.target.value })}>
               Drinking:
               <select required>
@@ -232,6 +264,7 @@ export default class LifeCalc extends React.Component {
                 <option value="_MT_1_PER_DAY">8 or More per Week</option>
               </select>
             </div>
+              <br/>
             <button className="myButton" type="submit">finish</button>
           </form>
         )}

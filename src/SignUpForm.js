@@ -94,6 +94,7 @@ export default class SignUpForm extends React.Component {
               required
             />
             <br />
+              <br/>
             <label>Email</label> ->
             <input
               onChange={this.handleChange}
@@ -104,6 +105,7 @@ export default class SignUpForm extends React.Component {
               required
             />
             <br />
+              <br/>
             <label>Number</label> -> +1{" "}
             <input
               onChange={this.handleChange}
@@ -115,6 +117,7 @@ export default class SignUpForm extends React.Component {
               required
             />
             <br />
+              <br/>
             <label>Password</label> ->
             <input
               onChange={this.handleChange}
@@ -125,6 +128,7 @@ export default class SignUpForm extends React.Component {
               required
             />
             <br />
+              <br/>
             <label>Password Confirmation</label> ->
             <input
               onChange={this.handleChange}
@@ -135,6 +139,7 @@ export default class SignUpForm extends React.Component {
               required
             />
             <br />
+              <br/>
             <button className="myButton" onClick={e => this.createUser(e)}> Next </button>
           </form>
         )}
