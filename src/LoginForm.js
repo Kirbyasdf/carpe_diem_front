@@ -40,6 +40,9 @@ export default class LoginForm extends React.Component {
         if (response.message === false || response.status === 500){
           return alert("that ain't it")
         }
+        if (response.error){
+            return alert("No User Found")
+          }
         this.props.setCurrentUser(response);
         this.props.activateUser();
       });
@@ -52,7 +55,7 @@ export default class LoginForm extends React.Component {
     return (
       <form id="mainBody" style={{color:"white"}} onSubmit={this.handleSubmit}>
         <WebcamVerify handleSubmit={this.handleSubmit}/>
-        <input className="inputEmail"  
+        <input className="inputEmail"
           onChange={this.handleChange}
           name="email"
           value={this.state.email}

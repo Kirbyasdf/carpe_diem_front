@@ -102,7 +102,7 @@ export default class SignUpForm extends React.Component {
               name="email"
               type="email"
               value={this.state.email}
-              placeholder="email"
+              placeholder="Email"
               required
             />
             <br />
@@ -112,7 +112,7 @@ export default class SignUpForm extends React.Component {
               onChange={this.handleChange}
               name="number"
               value={this.state.number}
-              placeholder="number"
+              placeholder="Number"
               onKeyDown={e => this.limit(e)}
               onKeyUp={e => this.limit(e)}
               required
@@ -137,7 +137,7 @@ export default class SignUpForm extends React.Component {
               type="password"
               name="passwordConfirmation"
               value={this.state.passwordConfirmation}
-              placeholder="Password Confirmation"
+              placeholder="Password"
               required
             />
             <br />

@@ -86,7 +86,7 @@ export default class Setting extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <div id="mainBody" style={{ color: "white" }}>
+      <div id="signUp" style={{ color: "white" }}>
         <form onSubmit={this.handleSubmit}>
           <label>Email</label>
           <input

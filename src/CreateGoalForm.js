@@ -35,7 +35,7 @@ export default class CreateGoalForm extends React.Component {
   render() {
     return (
       <h4>
-      <form id="mainBody" style={{color:"white"}} onSubmit={this.handleSubmit}>
+      <form  id="signUp" style={{color:"white"}} onSubmit={this.handleSubmit}>
         <br/>
         <input
           onChange={this.handleChange}
@@ -63,6 +63,7 @@ export default class CreateGoalForm extends React.Component {
             <option value="" />
             <option value="1">Text</option>
             <option value="2">Email</option>
+            <option value="3">Both</option>
           </select>
         </div>
         <br />

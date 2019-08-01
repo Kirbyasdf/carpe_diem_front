@@ -3,6 +3,7 @@ import Countdown from "./CountDown"
 import img from './grim.png'
 import tikTok from './tikTok.mp3'
 
+
 export default class LifeCalc extends React.Component {
   state = {
     completed: false,
