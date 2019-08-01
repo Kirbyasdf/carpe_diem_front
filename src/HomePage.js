@@ -4,6 +4,8 @@ import GoalCard from "./GoalCard";
 import CreateGoalForm from "./CreateGoalForm";
 import EditGoalForm from "./EditGoalForm";
 import Settings from "./Settings";
+import Countdown from 'react-countdown-now';
+
 
 export default class HomePage extends React.Component {
   state = {
@@ -11,6 +13,7 @@ export default class HomePage extends React.Component {
     selectedGoal: "",
     settings: false
   };
+
 
   setPage = () => {
     switch (this.state.page) {
@@ -55,6 +58,7 @@ export default class HomePage extends React.Component {
           {" "}
           Welcome this will be the home page for {this.props.user.name} who has{" "}
           {this.props.user.tltl} years left
+          <Countdown  daysInHours={((this.props.user.tltl) + (new Date()))/24 }/>
         </h1>
 
         <button className="myButton" onClick={() => this.setState({ page: 1 })}>Add Goal</button>

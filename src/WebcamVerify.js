@@ -2,6 +2,13 @@ import React from "react";
 import Webcam from "react-webcam";
 
 
+const buttonstyle = {
+      position: "fixed",
+      left: "50%",
+    }
+
+
+
 export default class WebcamCapture extends React.Component {
   setRef = webcam => {
     this.webcam = webcam;
@@ -22,6 +29,11 @@ export default class WebcamCapture extends React.Component {
       })
   };
 
+
+
+
+
+
   render() {
     const videoConstraints = {
       width: 1280,
@@ -30,8 +42,11 @@ export default class WebcamCapture extends React.Component {
     };
 
 
+
+
+
     return (
-      <div>
+      <div className="photoBooth">
 
         <Webcam
           audio={false}
@@ -43,7 +58,8 @@ export default class WebcamCapture extends React.Component {
         />
         <br />
 
-        <button className="myButton" onClick={(e)=>this.props.handleSubmit(e, this.webcam.getScreenshot())}>Verify Login</button>
+
+        <button   className="myButton" onClick={(e)=>this.props.handleSubmit(e, this.webcam.getScreenshot())}>Verify Login</button>
       </div>
     );
   }

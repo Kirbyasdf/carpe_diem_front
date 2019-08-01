@@ -14,6 +14,12 @@ body {
   left: 40%;
 }
 
+#splashPage{
+  position: fixed;
+  left: 40%;
+  top: 50%;
+}
+
 #main {
   height: 100%;
   display: grid;
@@ -21,6 +27,15 @@ body {
   background-image:url("https://i.pinimg.com/originals/99/99/23/9999236097e2481356e509abbb420bc0.gif");
    background-repeat: no-repeat;
    background-size: 100%, 100%;
+}
+
+.photoBooth {
+  border-radius: 3px;
+  border-color: white;
+  border:3px solid #ffffff;
+  border-style: ridge;
+
+
 }
 
 

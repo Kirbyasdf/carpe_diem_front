@@ -39,7 +39,7 @@ export default class WebcamCapture extends React.Component {
 
 
     return (
-      <div>
+      <div className="photoBooth">
 
         <Webcam
           audio={false}

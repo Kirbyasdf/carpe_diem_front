@@ -23,7 +23,13 @@ export default class SignUpForm extends React.Component {
     if (this.state.password != this.state.passwordConfirmation) {
       return alert("passwords do not match");
       e.preventDefault();
-    } else {
+    }
+    if (this.state.email === ""){
+      alert("enter a valid email");
+      e.preventDefault();
+    }
+
+    else {
       const name = this.state.name;
       const number = +this.state.number;
       const email = this.state.email;
@@ -71,7 +77,7 @@ export default class SignUpForm extends React.Component {
   render() {
     console.log(this.state.signUp);
     return (
-      <div style={{color:"white"}}>
+      <div id="mainBody" style={{color:"white"}}>
         {this.state.signUp ? (
           <WebcamCapture
             renderLC={this.props.renderLC}

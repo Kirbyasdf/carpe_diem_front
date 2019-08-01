@@ -73,9 +73,6 @@ sendEmail = () =>{
 
 
 
-
-
-
     render(){
       return (
     <ul>
@@ -93,7 +90,7 @@ sendEmail = () =>{
           <h2 style={{color:'red'}}> not completed</h2>
           }
 
-          <h3>  You made this:{this.renderTimeStamp()} Age: {this.props.age} day
+          <h3>  You made this:{this.renderTimeStamp()} 
            </h3>
            <footer>
            <button  className="myButton" onClick={this.sendText}> Send Text Notification </button>

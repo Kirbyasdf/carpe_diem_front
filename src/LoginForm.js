@@ -1,6 +1,12 @@
 import React from "react";
 import WebcamVerify from "./WebcamVerify"
 
+const emailStyle = {
+      position: "fixed",
+      left: "50%",
+      top: "55%"
+    }
+
 export default class LoginForm extends React.Component {
   state = {
     email: "",
@@ -45,15 +51,13 @@ export default class LoginForm extends React.Component {
   render() {
     return (
       <form id="mainBody" style={{color:"white"}} onSubmit={this.handleSubmit}>
-        <label>Email</label>
-        <input
+        <WebcamVerify handleSubmit={this.handleSubmit}/>
+        <input style={emailStyle}
           onChange={this.handleChange}
           name="email"
           value={this.state.email}
           placeholder="Email"
         />
-
-        <WebcamVerify handleSubmit={this.handleSubmit}/>
       </form>
     );
   }

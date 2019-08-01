@@ -101,6 +101,7 @@ export default class LifeCalc extends React.Component {
             Your Life Expectency is {this.props.currentUser.life_exp} years....
             that mean you have {this.props.currentUser.tltl} years left to get
             all your GOALS DONE!{" "}
+
           </div>
         ) : (
           <form onSubmit={this.handleSubmit}>

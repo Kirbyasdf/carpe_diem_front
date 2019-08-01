@@ -27,7 +27,6 @@ renderUserInput =()=> {
         />
       case 3:
       return <LoginForm
-
         activateUser={this.props.activateUser}
         setCurrentUser={this.props.setCurrentUser}
       />
@@ -38,7 +37,7 @@ renderUserInput =()=> {
 
 
 splashPageRender = () =>{
-  return <div id="mainBody">
+  return <div id="splashPage">
             <button className="myButton" onClick={()=>this.setState({page: 3})} > Log In </button>
             <br/>
             <br/>
