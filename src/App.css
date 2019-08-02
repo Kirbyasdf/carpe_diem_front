@@ -50,7 +50,7 @@ body {
 
 .lcTime{    position: fixed;
     right: 15%;
-    bottom: 20%;
+    bottom: 29%;
 }
 
 .lifeLine{
@@ -104,6 +104,21 @@ top: 53%;
 z-index: 500;
 right: 74px
 
+}
+
+.capButtton{
+right: -21%;
+position: relative;
+}
+
+.photoBoothSignUp {
+  border-radius: 3px;
+  border-color: white;
+  border: 3px solid #ffffff;
+  border-style: ridge;
+  right: 524px;
+  align-content: center;
+  position: fixed;
 }
 
 input {

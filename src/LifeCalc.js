@@ -2,6 +2,8 @@ import React from "react";
 import Countdown from "./CountDown"
 import img from './grim.png'
 import tikTok from './tikTok.mp3'
+import Sound from 'react-sound';
+
 
 
 
@@ -99,10 +101,12 @@ export default class LifeCalc extends React.Component {
   };
 
   render() {
+
     return (
       <div id="signUp" style={{color:"white"}}>
         {this.state.completed ? (
           <div>
+
             <h2>
               Your Life Expectency is
               {" "} <h1>{this.props.currentUser.life_exp} years....</h1>
@@ -128,7 +132,13 @@ export default class LifeCalc extends React.Component {
                 <div id="grim" >
                   <img src={img} />
                 </div>
-              
+                <Sound
+                url="./tikTok.mp3"
+                playStatus={Sound.status.PLAYING}
+                playFromPosition={0}
+
+              />
+
           </div>
         ) : (
           <form onSubmit={this.handleSubmit}>
@@ -200,6 +210,8 @@ export default class LifeCalc extends React.Component {
               Relationship Status:
               <select required>
                 <option value="" />
+                <option value="NEVER_MARRIED">Single</option>
+                <option value="MARRIED">Married</option>
                 <option value="NEVER_MARRIED">Never Married</option>
                 <option value="MARRIED">Married</option>
                 <option value="SEPARATED">Separated</option>

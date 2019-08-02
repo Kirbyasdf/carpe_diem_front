@@ -39,7 +39,7 @@ export default class WebcamCapture extends React.Component {
 
 
     return (
-        <div className="photoBooth">
+        <div className="photoBoothSignUp">
 
           <Webcam
             audio={false}
@@ -51,7 +51,7 @@ export default class WebcamCapture extends React.Component {
           />
           <br />
 
-          <button className="myButton inputButton" onClick={(e)=>this.capture(e)}>Capture photo</button>
+          <button className="myButton capButtton" onClick={(e)=>this.capture(e)}>Capture photo</button>
         </div>
     );
   }
