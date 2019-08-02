@@ -77,7 +77,7 @@ export default class SignUpForm extends React.Component {
   render() {
     console.log(this.state.signUp);
     return (
-      <div style={{color:"white"}}>
+      <div id="signUp" style={{color:"white"}}>
         {this.state.signUp ? (
           <WebcamCapture
             renderLC={this.props.renderLC}
@@ -85,8 +85,7 @@ export default class SignUpForm extends React.Component {
           />
         ) : (
             <h4>
-          <form id="signUp" >
-            <label>Name</label> ->
+          <form>
             <input
               onChange={this.handleChange}
               name="name"
@@ -96,7 +95,6 @@ export default class SignUpForm extends React.Component {
             />
             <br />
               <br/>
-            <label>Email</label> ->
             <input
               onChange={this.handleChange}
               name="email"
@@ -107,12 +105,11 @@ export default class SignUpForm extends React.Component {
             />
             <br />
               <br/>
-          <label>Number</label> -> +1{" "}
             <input
               onChange={this.handleChange}
               name="number"
               value={this.state.number}
-              placeholder="Number"
+              placeholder="+1 Number"
               onKeyDown={e => this.limit(e)}
               onKeyUp={e => this.limit(e)}
               required
@@ -120,28 +117,27 @@ export default class SignUpForm extends React.Component {
 
             <br />
               <br/>
-            <label>Password</label> ->
             <input
               onChange={this.handleChange}
               type="password"
               name="password"
               value={this.state.password}
-              placeholder="Password"
+              placeholder="Pass"
               required
             />
             <br />
               <br/>
-            <label>Password Confirm</label> ->
             <input
               onChange={this.handleChange}
               type="password"
               name="passwordConfirmation"
               value={this.state.passwordConfirmation}
-              placeholder="Password"
+              placeholder="Pass Confirm"
               required
             />
             <br />
             <br />
+
             <button className="myButton" onClick={e => this.createUser(e)}> Next </button>
           </form>
             </h4>

@@ -4,6 +4,8 @@ import img from './grim.png'
 import tikTok from './tikTok.mp3'
 
 
+
+
 export default class LifeCalc extends React.Component {
   state = {
     completed: false,
@@ -126,7 +128,8 @@ export default class LifeCalc extends React.Component {
                 <div id="grim" >
                   <img src={img} />
                 </div>
-            </div>
+              
+          </div>
         ) : (
           <form onSubmit={this.handleSubmit}>
             <div onChange={e => this.setState({ gender: e.target.value })}>
