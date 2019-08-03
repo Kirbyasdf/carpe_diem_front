@@ -213,7 +213,6 @@ export default class LifeCalc extends React.Component {
                 <option value="NEVER_MARRIED">Single</option>
                 <option value="MARRIED">Married</option>
                 <option value="NEVER_MARRIED">Never Married</option>
-                <option value="MARRIED">Married</option>
                 <option value="SEPARATED">Separated</option>
                 <option value="DIVORCED">Divorced</option>
                 <option value="WIDOWED">Windowed</option>
