@@ -5,7 +5,7 @@
 
 
 
-https://vimeo.com/353611491
+[VIDEO DEMO](https://vimeo.com/353611491)
 
       "Carpe Diem is, ironically, a fire and forget web App. 
       Users input data to get their life expectancy, set LARGE life goals and then 
