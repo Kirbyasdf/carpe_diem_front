@@ -1,3 +1,10 @@
+# THIS WAS MY FINAL SCHOOL PROJECT; ROUGHLY 2 WEEKS INTO REACT
+## FOR AN UPDATED REACT WORK SEE BELOW
+## [Chatroom] (https://github.com/Kirbyasdf/React-Redux-Socket-SQL-NODE)
+## [Store](https://github.com/Kirbyasdf/Redux-Firebase-OAuth-Demo)
+
+
+
 https://vimeo.com/353611491
 
       "Carpe Diem is, ironically, a fire and forget web App. 
